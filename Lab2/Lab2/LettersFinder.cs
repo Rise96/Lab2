@@ -4,27 +4,32 @@ namespace Lab2
 {
     class LettersFinder
     {
-        public int FindALetter(String inStr)
+        public int Find3ALetterWordsCount(String inputString)
         {
-            int result=0;
-            int numOfLetInWord=0;
-            for(int i = 0; i < inStr.Length; i++)
+            string[] words = inputString.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int result = 0;
+            for (int i = 0; i < words.Length; i++)
             {
-                if(inStr[i]=='A')
+                if (Is3ALetters(words[i]))
                 {
-                    numOfLetInWord++;
-                }
-                if(inStr[i]==' ')
-                {
-                    numOfLetInWord=0;
-                }
-                if (numOfLetInWord == 3)
-                {
-                    numOfLetInWord = 0;
                     result++;
                 }
             }
+
             return result;
+        }
+
+        private bool Is3ALetters(string word)
+        {
+            int numberOfLetInWord = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (word[i] == 'А')
+                {
+                    numberOfLetInWord++;
+                }
+            }
+            return numberOfLetInWord == 3;
         }
     }
 }

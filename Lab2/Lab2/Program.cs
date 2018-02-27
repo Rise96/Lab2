@@ -8,7 +8,7 @@ namespace Lab2
         {
             String inStr = Console.ReadLine();
             LettersFinder findALetter = new LettersFinder();
-            int numberOfWords = findALetter.FindALetter(inStr);
+            int numberOfWords = findALetter.Find3ALetterWordsCount(inStr);
             Console.WriteLine($"Число слов, в которых встретилось три буквы А, равно {numberOfWords}");
             Console.ReadLine();
         }
